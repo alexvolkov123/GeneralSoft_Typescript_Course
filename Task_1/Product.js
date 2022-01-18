@@ -12,7 +12,3 @@ var Product = /** @class */ (function () {
     Product.count = 0;
     return Product;
 }());
-var iPhone = new Product(1500, "phones", "iPhone");
-var Samsung = new Product(1500, "phones", "Samsung");
-console.log(iPhone.id);
-console.log(Samsung.id);
