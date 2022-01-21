@@ -24,7 +24,7 @@ class Product {
 } 
 
 class User {
-    basket : Product[] = [];
+    private basket : Product[] = [];
 
     addToBasket(things : Product | Product[]) : void{
         if(Array.isArray(things)){
