@@ -25,29 +25,25 @@ class Agent implements Employee {
     public amountOfEmployees : number = 0;
 
     constructor(
-        firstName : string,
-        lastName : string,
+        readonly firstName : string,
+        readonly lastName : string,
         readonly moneyPerEmployee: number
-    ) {
-        super(firstName, lastName, moneyPerEmployee);
-    }
+    ) {}
 
     public getSalary(): number {
         return this.amountOfEmployees * this.moneyPerEmployee - this.amountOfEmployees * this.moneyPerEmployee * 0.13;
     }
 }
 
-class Workman extends Employee {
+class Workman implements Employee {
 
     public workingHours : number = 0;
 
     constructor(
-        firstName : string,
-        lastName : string,
+        readonly firstName : string,
+        readonly lastName : string,
         readonly moneyPerHour: number 
-    ) {
-        super(firstName, lastName, moneyPerHour);
-    }
+    ) {}
 
     public getSalary(): number {
         return this.workingHours * this.moneyPerHour - this.workingHours * this.moneyPerHour * 0.13;
