@@ -2,13 +2,25 @@ interface Employee{
     firstName : string,
     lastName : string,
     salary? : number,
+    moneyPerEmployee? : number,
+
     getSalary() : number;
 }
 
 
-class Manager implements Employee{}
+class Manager implements Employee{
+    constructor(
+        readonly firstName : string,
+        readonly lastName : string,
+        readonly salary : number
+    ) {}
 
-class Agent extends Employee {
+    getSalary(): number {
+        return this.salary - this.salary * 0.13;
+    }
+}
+
+class Agent implements Employee {
 
     public amountOfEmployees : number = 0;
 

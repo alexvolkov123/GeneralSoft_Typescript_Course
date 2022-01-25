@@ -14,16 +14,7 @@ class Employee{
 class Manager extends Employee{}
 
 class Agent extends Employee {
-
     public amountOfEmployees : number = 0;
-
-    constructor(
-        firstName : string,
-        lastName : string,
-        readonly moneyPerEmployee: number
-    ) {
-        super(firstName, lastName, moneyPerEmployee);
-    }
 
     public getSalary(): number {
         this.salary = this.salary * this.amountOfEmployees;
@@ -32,24 +23,13 @@ class Agent extends Employee {
 }
 
 class Workman extends Employee {
-
     public workingHours : number = 0;
-
-    constructor(
-        firstName : string,
-        lastName : string,
-        readonly moneyPerHour: number 
-    ) {
-        super(firstName, lastName, moneyPerHour);
-    }
 
     public getSalary(): number {
         this.salary = this.salary * this.workingHours;
         return  this.salary - this.salary * 0.13;
     }
 }
-
-
 
 const showSalary = (employee : Employee) : void => {
     console.log(`${employee.firstName} ${employee.lastName} has salary: \$${employee.getSalary()}`);
