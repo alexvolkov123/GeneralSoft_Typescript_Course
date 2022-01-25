@@ -72,7 +72,7 @@ const myMap2 = new CustomMap<City, Country>();
 
 myMap1.toString = function(): string {
     let output: string = "";
-    this.arr.forEach( (item) => output = `${output} ${item.key}->${item.value}`);
+    this.arr.forEach((item) => output = `${output} ${item.key}->${item.value}`);
     return output;
 }
 
